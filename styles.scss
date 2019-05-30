@@ -1,0 +1,512 @@
+.background {
+  background-image: url(./background.jpeg);
+  background-repeat: round;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -10;
+  overflow: hidden;
+}
+
+*{
+  user-select: none;
+}
+
+a, a:hover, a:active, a:visited{
+  color: inherit;
+}
+
+.heading {
+  padding-top: 3%;
+  font-size: 36px;
+  font-family: monospace;
+  text-align: center;
+  p {
+    font-size: 20px;
+  }
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+
+$color-1 : #0f9bc0; //синьо
+$color-2 : #22419a; //тъмносиньо
+$color-3 : #57ccfd; //светлосиньо
+$color-4 : #e660e3; //розово-лилаво
+$color-5 : #f07306; //оранжево
+$color-6 : #9b1308; //тъмночервено
+$color-7 : #de8b3e; //тъмнооранжево
+
+
+
+.cards-collection {
+    position: relative;
+    display: block;
+    font-family: 'Roboto Slab', sans-serif;
+    overflow: hidden;
+    padding: 4px;
+    text-align: center;
+
+  .cards {
+      width: 300px;
+      height: 400px;
+      display: inline-block;
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 5px;
+  }
+
+  .card-1 {
+      position: relative;
+
+      img {
+        transition: all .2s ease;
+      }
+
+      &-triangle {
+        border-top: 220px solid transparent;
+        border-bottom: 190px solid transparent;
+        border-right: 288px solid #fff;
+        opacity: .8;
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: -100%;
+        transition: all .3s ease-in-out;
+
+        &::before {
+          content: '';
+          border-top: 220px solid transparent;
+          border-bottom: 190px solid transparent;
+          border-right: 288px solid $color-4;
+          position: absolute;
+          display: block;
+          top: -220px;
+          right: -612px;
+          transition: all .3s ease-in-out;
+          transition-delay: .2s;
+          }
+        }
+
+      &-rectangle {
+        width: 750px;
+        height: 200px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        top: 175%;
+        left: -78%;
+        transform: rotate(30deg);
+        z-index: 5;
+        opacity: .8;
+        transition: all .3s ease-in-out;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 750px;
+          height: 200px;
+          position: relative;
+          background: $color-1;
+          transform: translateY(200px);
+          z-index: 2;
+          transition: all .3s ease-in-out;
+          transition-delay: .1s;
+          }
+        }
+
+      p {
+        position: absolute;
+        top: 82%;
+        left: -100%;
+        color: #fff;
+        font-size: 20px;
+        z-index: 8;
+        transition: all 0.6s ease;
+        }
+
+
+      ul {
+        list-style: none;
+        position: absolute;
+        bottom: 0;
+        left: 12px;
+        z-index: 9;
+        padding: 0;
+        margin-bottom: 6px;
+
+        li {
+          display: inline-block;
+          font-size: 16px;
+          margin: 7px;
+          color: #fff;
+          transition: all .2s ease-in-out;
+          transform: translateY(100px);
+
+          &:nth-child(2) {
+            transition-delay: .2s;
+          }
+
+          &:nth-child(3) {
+            transition-delay: .3s;
+          }
+
+          &:nth-child(4) {
+            transition-delay: .4s;
+          }
+        }
+      }
+
+      &:hover {
+
+        p {
+          left: 6%;
+        }
+
+        /* Note to self: Това предизвиква анимацията, при която параграфът "влетява" от ляво. При hover, позицията му се променя от -100% вляво (извън екрана) до 6% вляво (на правилното място) за 0.6 секунди с *гладка*(ease) транзиция.
+        */
+
+        img {
+          transform: translateY(-16px);
+        }
+
+        /* Note to self: Това предизвиква леко отместване на снимката нагоре (по Y оста). Транзицията е с продължителност 0.2s, наследена от ред 191.
+        */
+
+        .card-1-rectangle {
+          top: 75%;
+
+          /* С това се отмества бялото поле, което е всъщност завъртян правоъгълник с намалена прозрачност.
+          */
+
+          &::before {
+            transform: translateY(15px);
+          }
+
+          /* С това се отмества оранжевото поле, което е зададено с ::before pseudo element-a.
+          */
+        }
+
+        li {
+            transform: translateY(0);
+        }
+        /* С това се показват елементите от списъка със социални мрежи.
+        */
+
+        .card-1-triangle {
+          right: -40%;
+
+          &:before {
+            right: -312px;
+          }
+        }
+        /* Тези двете движат двата триъгълника, които идват от дясно.
+        */
+      }
+
+  }
+
+
+  .card-2 {
+    position: relative;
+
+    &-rectangle-1 {
+      background: #fff;
+      width: 200px;
+      height: 110px;
+      transform: skewX(-20deg);
+      display: block;
+      position: absolute;
+      top: 73%;
+      opacity: .9;
+      left: -100%;
+      z-index: 8;
+      transition: all .5s ease-in;
+
+
+     .shadow-1 {
+        background: $color-6;
+        width: 230px;
+        height: 100px;
+        display: block;
+        position: absolute;
+        left: -200%;
+        z-index: -1;
+       transition: all .3s ease-in;
+      }
+    }
+
+    p {
+      position: relative;
+      padding-right: 112px;
+      font-size: 20px;
+      z-index: 20;
+      color: #fff;
+      transition: all 0.5s ease;
+    }
+
+    &-rectangle-2 {
+      width: 100px;
+      height: 70px;
+      background: #fff;
+      position: absolute;
+      top: 65%;
+      left: 400%;
+      opacity: .9;
+      transform: skewX(-20deg);
+      z-index: 8;
+      transition: all .5s ease-in;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 40px;
+        background: $color-3;
+        opacity: 1;
+        position: absolute;
+        left: 500%;
+        top: 10%;
+        transition: all .3s ease-in;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 40px;
+        background: $color-6;
+        opacity: 1;
+        position: absolute;
+        left: 500%;
+        top: 114%;
+        transition: all .5s ease-in;
+        transition-delay: .2s;
+      }
+
+      .shadow-2 {
+        background: $color-3;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: -10%;
+        left: 500%;
+        transition: all .5s ease-in;
+        transition-delay: .2s;
+      }
+
+    }
+
+    &-circle {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      top: -15%;
+      left: 50%;
+      opacity: .9;
+      transform: scale(0);
+      transition: all .3s ease;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: $color-6;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: all .3s ease;
+        transition-delay: .2s;
+      }
+    }
+
+    ul {
+    list-style: none;
+    position: absolute;
+    top: -9px;
+    right: 7px;
+    padding-top: 60px;
+    transition: all .4s ease;
+
+      li {
+        display: inline-block;
+        margin: 4px;
+        color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: rgba(87, 204, 253, .9);
+        text-align: center;
+        line-height: 1.7rem;
+        font-size: 12px;
+        transition: all .3s ease;
+        transform: translateX(500%);
+
+        &:nth-child(1){
+          transition-delay: .2s;
+        }
+
+        &:nth-child(2){
+          transition-delay: .3s;
+        }
+
+        &:nth-child(3){
+          transition-delay: .4s;
+        }
+      }
+    }
+
+
+    &:hover {
+      .card-2-rectangle-1 {
+        left: 10%;
+
+        .shadow-1 {
+          left: -20%;
+        }
+      }
+
+      .card-2-rectangle-2 {
+        left: 60%;
+
+        &:before {
+          left: -100%;
+        }
+
+        &:after {
+          left: 80%;
+        }
+
+        .shadow-2 {
+          left: -10%;
+        }
+
+      }
+
+      p{
+        transform: translateY(-118px);
+      }
+
+      .card-2-circle {
+         transform: scale(1);
+
+        &:before {
+          transform: scale(.9);
+        }
+      }
+
+      ul {
+        li {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+
+
+  .card-3{
+    position: relative;
+
+    .img-responsive{
+      transition: all 0.2s ease;
+    }
+
+    .drip{
+      position: absolute;
+      width: 330px;
+      top: -250px;
+      transition: all 0.5s ease;
+    }
+
+    .splat{
+      position: absolute;
+      width: 380px;
+      top: 305px;
+      right:-26px;
+      opacity: 0.8;
+      transform: scale(0);
+      transition: all 0.7s ease;
+    }
+
+    p {
+      position: absolute;
+      top: 84%;
+      right: 14%;
+      left: 14%;
+      color: #fff;
+      font-size: 20px;
+      z-index: 8;
+      transform: scale(0);
+      transition: all 0.6s ease;
+      transition-delay: 0.2s;
+      vertical-align: middle;
+      margin: 0;
+      }
+
+    ul.left{
+      position: relative;
+      display: inline-block;
+      top: -12%;
+      right: 34%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+    ul.right{
+      display: inline-block;
+      position: relative;
+      top: -12%;
+      right: -34%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    ul.left, ul.right{
+      li{
+        margin: 4px;
+        transition: all 0.4s ease;
+
+        &:nth-child(1){
+          transition-delay: 0.4s;
+        }
+        &:nth-child(2){
+          transition-delay: 0.5s;
+        }
+      }
+    }
+
+    &:hover{
+
+      .drip{
+        top: -40px;
+      }
+
+      .splat{
+        transform: scale(1);
+      }
+
+      p{
+        transform: scale(1);
+      }
+
+      ul.left, ul.right{
+        li{
+          transform:translateY(-52px);
+        }
+      }
+
+    }
+}
+
+
+}
