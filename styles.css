@@ -131,14 +131,14 @@ a:visited {
     top: 74%;
     left: -90%;
     transform: skewX(-20deg);
-    transition: 0.4s ease; }
+    transition: 0.5s ease; }
   .cards-collection .card-2 .rectangle-shadow {
     width: 220px;
     height: 100px;
     background: #0f9bc3;
     top: -10%;
     left: -8%;
-    transition: 0.4s ease;
+    transition: 0.5s ease;
     transition-delay: 0.2s; }
   .cards-collection .card-2 .rectangle-2 {
     width: 90px;
@@ -148,14 +148,14 @@ a:visited {
     right: -50%;
     top: 60%;
     transform: skewX(-20deg);
-    transition: 0.4s ease; }
+    transition: 0.5s ease; }
   .cards-collection .card-2 .rectangle-shadow-2 {
     width: 90px;
     height: 70px;
     background: #f47b20;
     top: -8%;
     right: 8%;
-    transition: 0.4s ease;
+    transition: 0.5s ease;
     transition-delay: 0.2s; }
   .cards-collection .card-2 p {
     top: 79%;

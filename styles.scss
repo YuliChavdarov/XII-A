@@ -191,7 +191,7 @@ $color-6: #9b1308; //dark red
       top: 74%;
       left: -90%;
       transform: skewX(-20deg);
-      transition: 0.4s ease;
+      transition: 0.5s ease;
     }
 
     .rectangle-shadow {
@@ -200,7 +200,7 @@ $color-6: #9b1308; //dark red
       background: $color-1;
       top: -10%;
       left: -8%;
-      transition: 0.4s ease;
+      transition: 0.5s ease;
       transition-delay: 0.2s;
     }
 
@@ -212,7 +212,7 @@ $color-6: #9b1308; //dark red
       right: -50%;
       top: 60%;
       transform: skewX(-20deg);
-      transition: 0.4s ease;
+      transition: 0.5s ease;
     }
 
     .rectangle-shadow-2 {
@@ -221,7 +221,7 @@ $color-6: #9b1308; //dark red
       background: $color-5;
       top: -8%;
       right: 8%;
-      transition: 0.4s ease;
+      transition: 0.5s ease;
       transition-delay: 0.2s;
     }
 
@@ -769,4 +769,3 @@ $color-6: #9b1308; //dark red
     }
   }
 }
-// СЛОЖИ ПРЕФИКСИ ЗА ВСИЧКИ BROWSER-И
